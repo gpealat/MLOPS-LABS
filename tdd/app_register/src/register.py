@@ -40,3 +40,37 @@ def register(username: str, email: str, password:str)->bool:
 
     # The output is simply the multiplication of 3 booleans: if one is false, it is all false
     return check_username * check_email * check_password
+
+def get_email_from_input():
+    email = input("Tell me your email:")
+
+    if ('@' not in email or "." not in email):
+        print('Email invalid')
+    else:
+        return email
+    
+def get_username_from_input():
+    username = input('Tell me your username:')
+
+    # Checking the username
+    if (username == '') or (' ' in username):
+        print('Username invalid')
+    else:
+        return username
+    
+def get_password_from_input():
+    password = input("What is your password?")
+
+     # Checking the password
+    if len(password)<8:
+        print('Wrong password')
+        return None
+
+    # Checking that we have the required complexity
+    pattern = r"^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$"
+
+    if not re.match(pattern, password):
+        print('Wrong password')
+        return None
+    else:
+        return password
