@@ -19,3 +19,6 @@ def is_prime(x:int)->bool:
             return False
 
     return True
+
+def sum_of_primes(nums):
+    return sum([x for x in nums if is_prime(x)])
