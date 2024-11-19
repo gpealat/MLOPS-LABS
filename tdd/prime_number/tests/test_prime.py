@@ -9,3 +9,6 @@ def test_29_prime():
     """Function which tests if 29 is a prime
     """
     assert src.is_prime(29)
+
+def test_prime_composite_number():
+    assert src.is_prime(15) == False
