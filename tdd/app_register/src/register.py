@@ -41,7 +41,12 @@ def register(username: str, email: str, password:str)->bool:
     # The output is simply the multiplication of 3 booleans: if one is false, it is all false
     return check_username * check_email * check_password
 
-def get_email_from_input():
+def get_email_from_input()->str:
+    """Function that get the email from an input and validate it
+
+    Returns:
+        str: returns the email if everything is fine
+    """
     email = input("Tell me your email:")
 
     if ('@' not in email or "." not in email):
@@ -49,7 +54,12 @@ def get_email_from_input():
     else:
         return email
     
-def get_username_from_input():
+def get_username_from_input()->str:
+    """Function that get the user input for the username and validates it
+
+    Returns:
+        str: username if valid
+    """
     username = input('Tell me your username:')
 
     # Checking the username
@@ -59,6 +69,11 @@ def get_username_from_input():
         return username
     
 def get_password_from_input():
+    """Function that takes an input for password and validates it
+
+    Returns:
+        _type_: validated password
+    """
     password = input("What is your password?")
 
      # Checking the password
