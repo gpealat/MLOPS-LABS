@@ -123,3 +123,11 @@ def test_correct_password(monkeypatch):
     monkeypatch.setattr('sys.stdin', io.StringIO("12345@aq"))
     assert register.get_password_from_input() == "12345@aq"
 
+def test_wrong_password(monkeypatch):
+    """Test a wrong password
+
+    Args:
+        monkeypatch (_type_): _description_
+    """
+    monkeypatch.setattr('sys.stdin', io.StringIO("azert@aq"))
+    assert register.get_password_from_input() is None
