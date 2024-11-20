@@ -1,3 +1,4 @@
+"""Module to check the email, username and password"""
 import re
 
 

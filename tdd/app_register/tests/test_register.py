@@ -1,6 +1,9 @@
-from app_register.src import register
+"""Test module"""
 import pytest
 import io
+
+from app_register.src import register
+
 
 def test_username():
     """Test function for the username
