@@ -39,7 +39,7 @@ def register(username: str, email: str, password: str) -> bool:
     if check_password and not re.match(pattern, password):
         check_password = False
 
-    # The output is simply the multiplication of 3 booleans:
+    # The output is simply the multiplication of 3 booleans :
     # if one is false, it is all false
     return check_username * check_email * check_password
 
